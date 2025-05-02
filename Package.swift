@@ -14,8 +14,11 @@ let package = Package(
     targets: [
         .target(
             name: "CoreActionSheetPicker",
-            path: "CoreActionSheetPicker/CoreActionSheetPicker",   // ⬅︎ one level higher
-            publicHeadersPath: "."                  // ⬅︎ expose *all* headers
+            path: "CoreActionSheetPicker/CoreActionSheetPicker",
+            publicHeadersPath: "Pickers/include",
+            cSettings: [
+                .define("COCOAPODS")          // 👈 makes the #if branch true
+            ]
         )
     ],
     swiftLanguageVersions: [.v5]
