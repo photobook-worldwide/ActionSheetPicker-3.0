@@ -16,6 +16,9 @@ let package = Package(
             name: "CoreActionSheetPicker",
             path: "CoreActionSheetPicker/CoreActionSheetPicker",   // ⬅︎ one level higher
             publicHeadersPath: "Pickers/include"                  // ⬅︎ still points to the headers
+            cSettings: [
+                .headerSearchPath("../")      // reach another level up
+            ]
         )
     ],
     swiftLanguageVersions: [.v5]
